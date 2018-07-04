@@ -1,0 +1,13 @@
+Subject: Remove hardcoded LDFLAGS, this way dh will propagate hardening
+flags correctly
+From: Alex Mestiashvili <mailatgoogl@gmail.com>
+--- hdparm.orig/Makefile
++++ hdparm/Makefile
+@@ -15,7 +15,6 @@
+ 
+ CFLAGS := -O2 -W -Wall -Wbad-function-cast -Wcast-align -Wpointer-arith -Wcast-qual -Wshadow -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -fkeep-inline-functions -Wwrite-strings -Waggregate-return -Wnested-externs -Wtrigraphs $(CFLAGS)
+ 
+-LDFLAGS = -s
+ #LDFLAGS = -s -static
+ INSTALL = install
+ INSTALL_DATA = $(INSTALL) -m 644

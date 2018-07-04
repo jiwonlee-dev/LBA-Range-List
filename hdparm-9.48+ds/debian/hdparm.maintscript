@@ -1,0 +1,2 @@
+rm_conffile	/etc/default/hdparm 9.48+ds-1~
+rm_conffile	/etc/init.d/hdparm 9.48+ds-1~

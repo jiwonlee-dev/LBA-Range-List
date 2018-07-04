@@ -1,0 +1,36 @@
+Source: hdparm
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Alexandre Mestiashvili <alex@biotec.tu-dresden.de>
+Section: admin
+Priority: optional
+Build-Depends: debhelper (>= 9),
+Standards-Version: 3.9.7
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-main/hdparm.git/
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/hdparm.git
+Homepage: http://sourceforge.net/projects/hdparm/
+
+Package: hdparm
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         lsb-base
+Recommends: powermgmt-base
+Suggests: apmd
+Replaces: apmd (<= 3.0.2-1.15)
+Description: tune hard disk parameters for high performance
+ Get/set device parameters for Linux SATA/IDE drives.
+ Rrovides a command line interface to various kernel interfaces supported by
+ the Linux SATA/PATA/SAS "libata" subsystem and the older IDE driver subsystem.
+ Many newer (2008 and later) USB drive enclosures now also support "SAT"
+ (SCSI-ATA Command Translation) and therefore may also work with hdparm.
+
+Package: hdparm-udeb
+Architecture: any
+Section: debian-installer
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Package-Type: udeb
+Description: tune hard disk parameters for high performance
+ Get/set device parameters for Linux SATA/IDE drives.
+ .
+ This is a minimal package for use in debian-installer.

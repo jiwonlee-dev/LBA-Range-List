@@ -1,0 +1,13 @@
+Origin: Alex Mestiashvili <mailatgoogl@gmail.com>
+Subject: fix typo s/offical/official/
+--- hdparm.orig/hdparm.8
++++ hdparm/hdparm.8
+@@ -509,7 +509,7 @@
+ .TP
+ .I -P
+ Set the maximum sector count for the drive\'s internal prefetch mechanism.
+-Not all drives support this feature, and it was dropped from the offical spec
++Not all drives support this feature, and it was dropped from the official spec
+ as of ATA-4.
+ .TP
+ .I --prefer-ata12
