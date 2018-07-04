@@ -1,7 +1,7 @@
-###Get List of LBA Ranges 
+Get List of LBA Ranges 
 
 Compile 
-`$ make `
+ $ make 
 
 Test
-`$ ./test Makefile `
+ $ ./test Makefile 
