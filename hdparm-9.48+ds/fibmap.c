@@ -31,6 +31,9 @@ struct file_extent {
 	__u64 block_count;
 };
 
+
+extern void add_range(__u64 begin_lba ,__u64 end_lba ,__u64 byte_offset );
+	
 static void handle_extent (struct file_extent ext, unsigned int sectors_per_block, __u64 start_lba)
 {
 	char lba_info[64], len_info[32];
@@ -43,6 +46,10 @@ static void handle_extent (struct file_extent ext, unsigned int sectors_per_bloc
 	} else {
 		begin_lba = end_lba = 0;
 	}
+
+	add_range(begin_lba , end_lba , ext.byte_offset );
+
+	return ;
 
 	if (ext.first_block)
 		sprintf(lba_info, "%10llu %10llu", begin_lba, end_lba);
@@ -259,10 +266,10 @@ int do_filemap (const char *file_name)
 		return err;
 	};
 	sectors_per_block = blksize / sector_bytes;
-	printf("\n%s:\n filesystem blocksize %u, begins at LBA %llu;"
-	       " assuming %u byte sectors.\n",
-	       file_name, blksize, start_lba, sector_bytes);
-	printf("%12s %10s %10s %10s\n", "byte_offset", "begin_LBA", "end_LBA", "sectors");
+	//printf("\n%s:\n filesystem blocksize %u, begins at LBA %llu;"
+	//       " assuming %u byte sectors.\n",
+	//       file_name, blksize, start_lba, sector_bytes);
+	//printf("%12s %10s %10s %10s\n", "byte_offset", "begin_LBA", "end_LBA", "sectors");
 
 	if (st.st_size == 0) {
 		struct file_extent ext;
